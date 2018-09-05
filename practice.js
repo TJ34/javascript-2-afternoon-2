@@ -125,7 +125,15 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+const divider = (numbersArray) => {
+  const divided = [[],[]];
+  for(let i=0;i<numbersArray.length;i++){
+    if(numbersArray[i]%2===0){
+      divided[0].push(numbersArray[i])
+    } else {divided[1].push(numbersArray[i])}
+  }
+  return divided;
+ }
 
 
 
@@ -146,7 +154,15 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+const finder = (arr) => {
+  const number = getRandomArbitrary();
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]===number){
+      return true
+    }
+  }
+  return false
+}
 
 
 
@@ -175,7 +191,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+const removeItem = (myGroceryList,item) => {
+  if(myGroceryList && item){
+  } else {return []}
+  for(let i=0;i<myGroceryList.length;i++){
+    if(myGroceryList[i]===item){
+      myGroceryList.splice(i,1);
+    }
+  }
+  return myGroceryList;
+}
+
+const addItem = (myGroceryList,item) => {
+  if(myGroceryList && item){
+  } else {return []}
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 
@@ -185,7 +217,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+const maker = () => {
+  const numbers = [];
+  for(let i=1;i<216;i++){
+    numbers.push(i);
+  }
+  return numbers;
+}
 
 
 
@@ -201,7 +239,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+const addTen = (numbers) => {
+  const newArr = numbers.map(x => {
+      x=parseInt(x)
+    return x += 10});
+  return newArr;
+}
 
 
 
@@ -226,7 +269,11 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
+const longer = (arr1,arr2) => {
+  if(arr1.length > arr2.length){
+    return arr1
+  } else {return arr2}
+}
 
 
 
@@ -238,7 +285,27 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+const both = (arr1,arr2) => {
+  newArr = []
+  for(let i=0;i<arr1.length;i++){
+    for(let j=0;j<arr2.length;j++){
+      if(arr1[i]===arr2[j]){
+        newArr.push(arr1[i])
+      }
+    }
+  }
+  return newArr;
+}
+
+/*const both = (arr1,arr2) => {
+  let newArr = arr1.concat(arr2);
+  let finalArr = [];
+  for(let i=newArr.length-1;i>=0;i--){
+    if(i !== newArr.indexOf(newArr[i])){
+      finalArr.push(newArr[i])
+    }
+    return finalArr;
+}*/
 
 
 
